@@ -14,6 +14,33 @@ void buildTree(int* arr,int* tree,int start,int end,int treeNode){
 	tree[treeNode] = min(tree[2*treeNode],tree[2*treeNode+1]);
 }
 
+int querySegmentTreeLazy(int* tree, int* lazy, int start, int end, int startR, int endR, int currPos) {
+    // Apply any pending updates
+    if (lazy[currPos] != 0) {
+        tree[currPos] += lazy[currPos];
+        if (start != end) {
+            lazy[2 * currPos] += lazy[currPos];
+            lazy[2 * currPos + 1] += lazy[currPos];
+        }
+        lazy[currPos] = 0;
+    }
+
+    // No overlap
+    if (startR > end || endR < start)
+        return INT_MAX;
+
+    // Complete overlap
+    if (startR <= start && end <= endR)
+        return tree[currPos];
+
+    // Partial overlap
+    int mid = (start + high) / 2;
+    int leftAns = querySegmentTreeLazy(tree, lazy, start, mid, startR, endR, 2 * currPos);
+    int rightAns = querySegmentTreeLazy(tree, lazy, mid + 1, end, startR, endR, 2 * currPos + 1);
+    return min(leftAns, rightAns);
+}
+
+
 void updateSegmentTreeLazy(int* tree,int* lazy,int low,int high,int startR,int endR,int currPos,int inc){
 
 	if(low > high){
