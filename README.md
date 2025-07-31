@@ -160,6 +160,7 @@ for (int i = 0; i < temp.size(); ++i) {
 - [RATING - Coder Ratings](https://www.spoj.com/problems/RATING)
 - [DQUERY - D-query](https://www.spoj.com/problems/DQUERY)
 - [ORDERSET - Order Statistic Set](https://www.spoj.com/problems/ORDERSET/en)
+- [INCSEQ - Increasing Subsequences](https://www.spoj.com/problems/INCSEQ/)
 
 
 
