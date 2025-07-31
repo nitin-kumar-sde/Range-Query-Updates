@@ -1,4 +1,4 @@
-# 🌲 Introduction to Segment Trees
+# 🌲 Segment Trees
 
 A **Segment Tree** is a powerful data structure that enables efficient processing of
 
@@ -60,6 +60,59 @@ Updating each element of a range takes `O(n)` time.
 ## 💡 Time Complexity (with Lazy)
 - **Range Update**: `O(log n)`
 - **Range Query**: `O(log n)`
+
+---
+
+# 🌿 Fenwick Tree (Binary Indexed Tree)
+
+A **Fenwick Tree**, also known as a **Binary Indexed Tree (BIT)**, is a space-efficient data structure useful for
+
+- ✅ Prefix sum queries in `O(log n)` time
+- ✅ Point updates in `O(log n)` time
+
+It is especially useful when
+
+- You need to **update** elements frequently
+- You need to **query prefix sums**
+- You want a simpler and faster alternative to Segment Tree for cumulative queries
+
+
+## 📦 Operations
+
+  **Update Operation**  
+   Adds a value to an index.
+
+   ```
+   void update(int idx, int val, int n) {
+       for (; idx <= n; idx += (idx & -idx))
+           BIT[idx] += val;
+   }
+   ```
+
+  **Query Operation**
+    Returns the prefix sum from index 1 to idx.
+    
+    ```
+     int query(int idx) {
+         int sum = 0;
+         for (; idx > 0; idx -= (idx & -idx))
+              sum += BIT[idx];
+         return sum;
+    }
+    
+     ```
+
+  
+## 🧠 BIT Indexing Insight
+       
+BIT uses the lowest set bit to jump efficiently
+   
+    ```
+    idx += (idx & -idx) moves upward (used in updates)
+    idx -= (idx & -idx) moves downward (used in queries)
+    ```
+
+> This enables both operations in O(log n) time.
 
 ---
 
