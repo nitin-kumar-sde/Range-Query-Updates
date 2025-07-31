@@ -44,7 +44,7 @@ int main()
      cin >> qr[i].second;
      qr[i].index=i;
   }
-    
+  // offline queries 
   sort(qr,qr+q, comp);
   int total=0;
   int ind=0;
