@@ -106,10 +106,10 @@ It is especially useful when
        
 BIT uses the lowest set bit to jump efficiently
    
-    ```
+  ```
     idx += (idx & -idx) moves upward (used in updates)
     idx -= (idx & -idx) moves downward (used in queries)
-    ```
+  ```
 
 > This enables both operations in O(log n) time.
 
