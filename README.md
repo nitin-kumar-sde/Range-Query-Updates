@@ -114,6 +114,38 @@ BIT uses the lowest set bit to jump efficiently
 
 > This enables both operations in O(log n) time.
 
+
+## 🧭 Coordinate Compression
+
+**Coordinate Compression** is a technique to map large or arbitrary values into a smaller range like `[1, N]`, preserving their order.
+
+### 🤔 Why Use It?
+
+- BITs and Segment Trees require index-based access (`1..N`)
+- If input values are large (e.g., `10^9`), directly indexing is impractical
+- Compression reduces range while maintaining relative order
+
+
+### 🛠️ How to Do It?
+
+1. Store all unique values in a vector
+2. Sort and remove duplicates
+3. Map original values to their new compressed form
+
+```
+vector<int> arr = {100, 300, 1000};
+vector<int> temp = arr;
+
+sort(temp.begin(), temp.end());
+temp.erase(unique(temp.begin(), temp.end()), temp.end());
+
+unordered_map<int, int> compressed;
+for (int i = 0; i < temp.size(); ++i) {
+    compressed[temp[i]] = i + 1; // +1 for 1-based indexing
+}
+
+```
+
 ---
 
 # ⛵ Practice Problems
