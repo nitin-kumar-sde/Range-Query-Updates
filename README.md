@@ -72,6 +72,9 @@ Updating each element of a range takes `O(n)` time.
 - [2 vs 3](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/2-vs-3) 
 - [HORRIBLE - Horrible Queries](https://www.spoj.com/problems/HORRIBLE) 
 - [SEGSQRSS - Sum of Squares with Segment Tree](https://www.spoj.com/problems/SEGSQRSS/)
+- [RATING - Coder Ratings](https://www.spoj.com/problems/RATING)
+- [DQUERY - D-query](https://www.spoj.com/problems/DQUERY)
+- [ORDERSET - Order Statistic Set](https://www.spoj.com/problems/ORDERSET/en)
 
 
 
