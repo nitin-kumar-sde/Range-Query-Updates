@@ -79,7 +79,7 @@ It is especially useful when
 
 ## 📦 Operations
 
-  **Update Operation**  
+  ### Update Operation 
    Adds a value to an index.
 
    ```
@@ -89,18 +89,17 @@ It is especially useful when
    }
    ```
 
-  **Query Operation**
+  ### Query Operation
     Returns the prefix sum from index 1 to idx.
     
-    ```
+   ```
      int query(int idx) {
          int sum = 0;
          for (; idx > 0; idx -= (idx & -idx))
               sum += BIT[idx];
          return sum;
     }
-    
-     ```
+   ```
 
   
 ## 🧠 BIT Indexing Insight
@@ -114,19 +113,20 @@ BIT uses the lowest set bit to jump efficiently
 
 > This enables both operations in O(log n) time.
 
+---
 
-## 🧭 Coordinate Compression
+# 🧭 Coordinate Compression
 
 **Coordinate Compression** is a technique to map large or arbitrary values into a smaller range like `[1, N]`, preserving their order.
 
-### 🤔 Why Use It?
+## 🤔 Why Use It?
 
 - BITs and Segment Trees require index-based access (`1..N`)
 - If input values are large (e.g., `10^9`), directly indexing is impractical
 - Compression reduces range while maintaining relative order
 
 
-### 🛠️ How to Do It?
+## 🛠️ How to Do It?
 
 1. Store all unique values in a vector
 2. Sort and remove duplicates
