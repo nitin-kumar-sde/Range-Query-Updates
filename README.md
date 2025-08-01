@@ -179,7 +179,57 @@ When dealing with multiple queries on an array or dataset, the strategy for answ
 | Time Efficiency          | May be slower for large batch queries   | Often faster using global optimizations   |
 | Real-time Friendly       | ✅ Yes                                   | ❌ No                                      |
 
+---
 
+# 🔮 Binary Lifting
+
+Binary Lifting is a method to jump in powers of 2 (1, 2, 4, 8...) to efficiently find the first position that satisfies a condition.
+
+Instead of checking every index, try jumping 2^k steps forward if it's still valid (i.e., doesn't break the condition).
+
+> 🧠 This reduces the search from O(n) to O(log n).
+
+## 🎲 Finding Lower Bound of array
+
+```
+int binary_lift_lower_bound(int n) {
+    int pos = 0;
+    for (int jump = 1 << 20; jump > 0; jump >>= 1) {
+        if (pos + jump < n && f(pos + jump) == false) {
+            pos += jump;
+        }
+    }
+    return pos + 1; // first index where f(i) == true
+}
+```
+
+## 🎨 Finding LCA of 2 nodes in a Tree
+
+```
+int lca(int u, int v) {
+    if (depth[u] < depth[v])
+        swap(u, v);
+
+    // Bring u up to v's level
+    for (int j = LOG - 1; j >= 0; --j) {
+        if (depth[u] - (1 << j) >= depth[v])
+            u = up[u][j];
+    }
+
+    if (u == v)
+        return u;
+
+    // Jump both up together
+    for (int j = LOG - 1; j >= 0; --j) {
+        if (up[u][j] != up[v][j]) {
+            u = up[u][j];
+            v = up[v][j];
+        }
+    }
+
+    return up[u][0]; 
+}
+```
 ---
 
 # ⛵ Practice Problems
