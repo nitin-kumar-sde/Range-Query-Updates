@@ -246,6 +246,7 @@ int lca(int u, int v) {
 - [ORDERSET - Order Statistic Set](https://www.spoj.com/problems/ORDERSET/en)
 - [INCSEQ - Increasing Subsequences](https://www.spoj.com/problems/INCSEQ/)
 - [Shil and Wave Seqeunce](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/shil-and-wave-seqeuncemonk)
+- [QTREE2 - Query on a tree II](https://www.spoj.com/problems/QTREE2/cstart=20)
 
 
 
