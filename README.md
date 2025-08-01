@@ -13,6 +13,18 @@ This repository contains implementations of advanced data structures used to per
 
 ---
 
+## 📚 Table of Contents
+
+- [🌲 Segment Trees](#-segment-trees)
+- [💤 Lazy Propagation](#-lazy-propagation)
+- [🌿 Fenwick Tree](#-fenwick-tree)
+- [🧭 Coordinate Compression](#-coordinate-compression)
+- [🔍 Online vs Offline Queries](#-online-vs-offline-queries)
+- [🔮 Binary Lifting](#-binary-lifting)
+- [⛵ Practice Problems](#-practice-problems)
+
+---
+
 # 🌲 Segment Trees
 
 A **Segment Tree** is a powerful data structure that enables efficient processing of
@@ -78,7 +90,7 @@ Updating each element of a range takes `O(n)` time.
 
 ---
 
-# 🌿 Fenwick Tree (Binary Indexed Tree)
+# 🌿 Fenwick Tree
 
 A **Fenwick Tree**, also known as a **Binary Indexed Tree (BIT)**, is a space-efficient data structure useful for
 
