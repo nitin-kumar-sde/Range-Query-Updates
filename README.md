@@ -203,32 +203,22 @@ int binary_lift_lower_bound(int n) {
 }
 ```
 
-## 🎨 Finding LCA of 2 nodes in a Tree
+## 🎨 Finding LCA of 2 nodes in a Tree in O(log n) time
 
 ```
-int lca(int u, int v) {
-    if (depth[u] < depth[v])
-        swap(u, v);
-
-    // Bring u up to v's level
-    for (int j = LOG - 1; j >= 0; --j) {
-        if (depth[u] - (1 << j) >= depth[v])
-            u = up[u][j];
+int lca(int u, int v, int n) {
+    if(isAns(u,v)) return u;
+    
+    if(isAns(v,u)) return v;
+    
+    int l=ceil(log2(n));
+    // binary lifting 
+    for(int i=l;i>=0;--i) {
+        if(!isAns(anc[u][i],v)) u=anc[u][i];
     }
-
-    if (u == v)
-        return u;
-
-    // Jump both up together
-    for (int j = LOG - 1; j >= 0; --j) {
-        if (up[u][j] != up[v][j]) {
-            u = up[u][j];
-            v = up[v][j];
-        }
-    }
-
-    return up[u][0]; 
+    return anc[u][0];
 }
+
 ```
 ---
 
