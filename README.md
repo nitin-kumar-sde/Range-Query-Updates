@@ -161,6 +161,7 @@ for (int i = 0; i < temp.size(); ++i) {
 - [DQUERY - D-query](https://www.spoj.com/problems/DQUERY)
 - [ORDERSET - Order Statistic Set](https://www.spoj.com/problems/ORDERSET/en)
 - [INCSEQ - Increasing Subsequences](https://www.spoj.com/problems/INCSEQ/)
+- [Shil and Wave Seqeunce](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/shil-and-wave-seqeuncemonk)
 
 
 
