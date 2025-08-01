@@ -192,15 +192,17 @@ Instead of checking every index, try jumping 2^k steps forward if it's still val
 ## 🎲 Finding Lower Bound of array
 
 ```
-int binary_lift_lower_bound(int n) {
-    int pos = 0;
-    for (int jump = 1 << 20; jump > 0; jump >>= 1) {
-        if (pos + jump < n && f(pos + jump) == false) {
-            pos += jump;
+int lower_bound(int k, int n) {
+    int curr = 0, prevsum = 0;
+    for (int i = log2(n); i >= 0; i--) {
+        if (curr + (1 << i) <= n && prevsum + bit[curr + (1 << i)] < k) {
+            curr += (1 << i);
+            prevsum += bit[curr];
         }
     }
-    return pos + 1; // first index where f(i) == true
+    return curr + 1;
 }
+
 ```
 
 ## 🎨 Finding LCA of 2 nodes in a Tree in O(log n) time
