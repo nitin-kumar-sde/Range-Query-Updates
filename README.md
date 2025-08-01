@@ -148,6 +148,40 @@ for (int i = 0; i < temp.size(); ++i) {
 
 ---
 
+# 🔍 Online vs Offline Queries
+
+When dealing with multiple queries on an array or dataset, the strategy for answering them efficiently can be broadly categorized into two types **Online Queries** and **Offline Queries**.
+
+
+
+## 🟢 Online Queries
+
+- Queries are answered **in the order they are given**.
+- Cannot reorder or preprocess them globally.
+- Used with **data structures** like Segment Tree, Binary Indexed Tree (Fenwick Tree), etc.
+- Ideal when the **query order matters** or **real-time processing** is required.
+
+
+## 🔴 Offline Queries
+
+- All queries are **collected first**, then **sorted or grouped** to optimize processing.
+- Allows **global preprocessing** or clever sorting 
+- Better performance when query reordering is allowed.
+
+## 📊 Comparison Table
+
+| Feature                  | Online Queries                          | Offline Queries                          |
+|--------------------------|------------------------------------------|-------------------------------------------|
+| Processing Order         | As input is received                    | Can be reordered                          |
+| Query Reordering         | ❌ Not Allowed                           | ✅ Allowed                                 |
+| Preprocessing            | Limited                                 | Extensive, often required                 |
+| Use of Advanced DS       | Common (BIT, Segment Tree, etc.)        | Common (Mo’s, Merge Sort Tree, etc.)      |
+| Time Efficiency          | May be slower for large batch queries   | Often faster using global optimizations   |
+| Real-time Friendly       | ✅ Yes                                   | ❌ No                                      |
+
+
+---
+
 # ⛵ Practice Problems
 
 - [Range Minimum Query](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/practice-problems/algorithm/range-minimum-query)
