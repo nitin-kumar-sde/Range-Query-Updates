@@ -1,3 +1,18 @@
+# 💎 Range Query & Update Data Structures
+
+This repository contains implementations of advanced data structures used to perform efficient range queries and updates on arrays. These operations are frequently used in competitive programming.
+
+
+## 🚀 Core Concepts
+
+✅ Point Update - Update a single index in an array
+
+✅ Range Update - Update all elements in a given range [L-R]
+
+✅ Range Query - Find the result over a range [L-R]
+
+---
+
 # 🌲 Segment Trees
 
 A **Segment Tree** is a powerful data structure that enables efficient processing of
